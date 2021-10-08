@@ -1,0 +1,9 @@
+.header {
+  background-color: $color-background-dark;
+}
+
+.header__wrapper {
+  margin: 0 auto;
+  width: clamp(700px, 80%, 1411px);
+  outline: 2px solid red;
+}
