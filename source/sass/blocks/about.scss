@@ -1,0 +1,78 @@
+.about__wrapper {
+  width: clamp(900px, 75%, 1170px);
+  margin: 0 auto;
+  padding: 110px 0;
+  padding-left: 180px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 54px;
+    padding-left: 183px;
+    width: calc((770 - 20 * 2) / 770 * 100%);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 60px 0 65px;
+    width: clamp(290px, 65%, 400px);
+  }
+}
+
+.about__heading {
+  margin: 0;
+  margin-bottom: 18px;
+  position: relative;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: $color-font;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 32px;
+    line-height: 140.62%;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 19px;
+    font-size: 28px;
+    line-height: 140.62%;
+  }
+
+  @include pseudo(before) {
+    left: -200px;
+    top: 0;
+    width: 220px;
+    height: 317px;
+    background-image: url("../img/number-desktop.png");
+    background-size: cover;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 251px;
+      height: 362px;
+      background-image: url("../img/number-tablet.png");
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+}
+
+.about p {
+  margin: 0;
+  margin-bottom: 29px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-font;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 30px;
+    line-height: 22px;
+  }
+}
+
+.about__button-more {
+  min-width: 180px;
+  padding: 14px 13px 13px 12px;
+}

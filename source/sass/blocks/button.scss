@@ -17,4 +17,9 @@
     background-color: $color-accent;
     color: $color-white;
   }
+
+  &--accent-light {
+    color: $color-accent;
+    border-color: $color-accent;
+  }
 }

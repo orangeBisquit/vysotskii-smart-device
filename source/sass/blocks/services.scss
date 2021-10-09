@@ -1,0 +1,173 @@
+.services {
+  padding: 93px 0 127px;
+  background-color: $color-background-dark;
+  color: $color-white;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 53px 0 78px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-bottom: 64px;
+  }
+}
+
+.services__wrapper {
+  width: clamp(900px, 75%, 1170px);
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: calc((770 - 20 * 2) / 770 * 100%);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: clamp(290px, 65%, 400px);
+  }
+}
+
+.services__heading {
+  margin: 0;
+  margin-bottom: 47px;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 46px;
+    font-size: 32px;
+    line-height: 140.62%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 28px;
+  }
+}
+
+.services__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: calc(30 / 1170 * 100%);
+
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+  }
+}
+
+.services__item {
+  z-index: 2;
+  position: relative;
+  background-color: $color-background-dark;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 30px;
+  }
+
+  @include pseudo(before) {
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--manufactoring {
+    &::before {
+      background-image: url("../img/service-manufactoring.jpg");
+
+      @media (max-width: $breakpoint-tablet) {
+        background-image: url("../img/service-manufactoring-tablet.jpg");
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        background-image: url("../img/service-manufactoring-mobile.jpg");
+      }
+    }
+  }
+
+  &--mounting {
+    &::before {
+      background-image: url("../img/service-mounting.jpg");
+
+      @media (max-width: $breakpoint-tablet) {
+        background-image: url("../img/service-mounting-tablet.jpg");
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        background-image: url("../img/service-mounting-mobile.jpg");
+      }
+    }
+  }
+
+  &--light {
+    &::before {
+      background-image: url("../img/service-light.jpg");
+
+      @media (max-width: $breakpoint-tablet) {
+        background-image: url("../img/service-light-tablet.jpg");
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        background-image: url("../img/service-light-mobile.jpg");
+      }
+    }
+  }
+}
+
+.services__link {
+  display: block;
+  min-height: 620px;
+  width: 100%;
+  height: 100%;
+  color: $color-white;
+  text-decoration: none;
+  padding: 53px 44px 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 43px 44px 0;
+    min-height: 256px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.services__item h3 {
+  margin: 0;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.services__pseudo-button {
+  z-index: 1;
+  position: absolute;
+  width: 63px;
+  height: 63px;
+  background-color: $color-accent;
+  bottom: 0;
+  right: 0;
+
+  @include pseudo(before) {
+    z-index: 2;
+    width: 4px;
+    height: 8px;
+    background-image: url("../img/icons/arrow.svg");
+    background-size: cover;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
