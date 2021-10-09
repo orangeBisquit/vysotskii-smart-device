@@ -22,19 +22,30 @@
 <body>
   <header class="header">
     <div class="header__wrapper">
-      <a href="#" class="header__logo">
-        <img src="img/icon-logo-light.png" width="210" height="52" alt="" class="header__logo-img">
-      </a>
-      <div class="header__menu">
-        <ul class="header__menu-list">
-          <li class="header__menu-item">
-            <a href="mailto:info@sd.ru" class="header__menu-link">info@sd.ru</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="tel:+74950005252" class="header__menu-link">+7 (495) 000 52 52</a>
-          </li>
-        </ul>
-        <div class="header__button-call button button--light">Заказать звонок</div>
+      <div class="header__menu-wrapper">
+        <a href="#" class="header__logo">
+          <img src="img/icon-logo-light.png" width="210" height="52" alt="" class="header__logo-img">
+        </a>
+        <div class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item header__menu-item--email">
+              <a href="mailto:info@sd.ru" class="header__menu-link">info@sd.ru</a>
+            </li>
+            <li class="header__menu-item header__menu-item--phone">
+              <a href="tel:+74950005252" class="header__menu-link">+7 (495) 000 52 52</a>
+            </li>
+          </ul>
+          <button class="header__button-call button">Заказать звонок</button>
+        </div>
+      </div>
+      <div class="header__promo promo">
+        <div class="promo__content">
+          <h1 class="promo__heading">Печатные платы</h1>
+          <div class="promo__content-wrapper">
+            <p class="promo__descr">производство и монтаж, поставка комплектующих, блоков и модулей</p>
+            <button class="promo__button-consult button button--accent-dark">Получить бесплатную консультацию</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>

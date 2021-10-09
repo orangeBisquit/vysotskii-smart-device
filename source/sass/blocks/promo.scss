@@ -1,0 +1,121 @@
+.promo {
+  display: flex;
+  position: relative;
+  padding-top: 160px;
+  padding-bottom: 278px;
+}
+
+.promo__content {
+  position: relative;
+  width: 718px;
+
+
+  @media (max-width: $breakpoint-tablet) {
+    min-width: 0;
+    width: 427px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 290px;
+  }
+
+  @include pseudo(before) {
+    z-index: 1;
+    top: -100px;
+    right: -692px;
+    width: 562px;
+    height: 487px;
+    background-image: url("../img/promo_triangles.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @include pseudo(after) {
+    top: 0;
+    right: -850px;
+    z-index: 2;
+    width: 705px;
+    height: 515px;
+    background-image: url("../img/board-desktop-1x.png");
+  }
+}
+
+.promo__heading {
+  margin: 0;
+  margin-bottom: 31px;
+  color: $color-white;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  font-family: $font-roboto;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 60px;
+  }
+}
+
+.promo__content-wrapper {
+  padding-left: 98px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-left: 51px;
+  }
+}
+
+.promo__descr {
+  position: relative;
+  margin: 0;
+  margin-bottom: 37px;
+  color: $color-white;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 34px;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 18px;
+    line-height: 156.8%;
+  }
+
+  @include pseudo(before) {
+    top: 15px;
+    /* promo__content-wrapper outset */
+    left: -98px;
+    width: 66px;
+    height: 2px;
+    background-color: $color-white;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 33px;
+      left: -51px;
+    }
+  }
+}
+
+.promo__button-consult {
+  padding: 17px 28px 14px;
+}
+
+.promo__img-wrapper {
+  top: 150px;
+  right: -50px;
+  z-index: 2;
+  position: relative;
+
+
+
+}
+
+.promo__img {
+  position: relative;
+  z-index: 2;
+  width: 705px;
+  height: 515px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 465px;
+    height: 340px;
+  }
+}
