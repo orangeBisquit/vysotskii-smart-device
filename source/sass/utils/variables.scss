@@ -4,10 +4,16 @@ $color-background-dark: #1b2d37;
 $color-background-light: #fafafa;
 $color-border: #ebebeb;
 $color-font: #666666;
+$color-invalid: #ff6d6a;
+$color-grey-links: #cdcdcd;
+$color-grey-divider: #626262;
 
 $breakpoint-tablet: 1023px;
 $breakpoint-mobile: 767px;
 
 $font-roboto: "Roboto Condensed",
 "Arial",
+sans-serif;
+$font-pt-mono: "PT Mono",
+"Courier New",
 sans-serif;
