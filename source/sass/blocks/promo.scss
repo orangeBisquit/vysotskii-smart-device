@@ -63,6 +63,7 @@
 
 .promo__img-board {
   position: absolute;
+  z-index: 2;
   width: 705px;
   height: 515px;
   top: -57px;
@@ -175,6 +176,7 @@
   padding: 18px 28px;
   min-width: 407px;
   border: 0;
+  text-decoration: none;
 
   @media (max-width: $breakpoint-tablet) {
     min-width: 380px;

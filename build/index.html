@@ -25,8 +25,11 @@
       <div class="header__menu-wrapper">
         <a href="#" class="header__logo">
           <picture>
-            <source media="(max-width: 768px)" srcset="img/logo-small.png" type="image/png">
-            <img src="img/icon-logo-light.png" width="202" height="52" alt="" class="header__logo-img">
+            <source media="(max-width: 768px)" srcset="img/logo-small-1x.webp 1x, img/logo-small-2x.webp 2x" type="image/webp">
+            <source srcset="img/icon-logo-light-1x.webp 1x, img/icon-logo-light-2x.webp 2x" type="image/webp">
+
+            <source media="(max-width: 768px)" srcset="img/logo-small-1x.png 1x, img/logo-small-2x.png 2x" type="image/png">
+            <img class="header__logo-img" src="img/icon-logo-light-1x.png" srcset="img/icon-logo-light-1x.png 1x, img/icon-logo-light-2x.png 2x" width="202" height="52" alt="Лого компании Smart Device">
           </picture>
 
         </a>
@@ -39,7 +42,7 @@
               <a href="tel:+74950005252" class="header__menu-link">+7 (495) 000 52 52</a>
             </li>
           </ul>
-          <button class="header__button-call button">Заказать звонок</button>
+          <button class="header__button-call button" aria-label="Открыть окно обратной связи">Заказать звонок</button>
         </div>
       </div>
       <div class="header__promo promo">
@@ -51,14 +54,14 @@
 
             <source media="(max-width: 767px)" srcset="img/board-mobile-1x.png 1x, img/board-mobile-2x.png 2x" type="image/png">
             <source media="(max-width: 1023px)" srcset="img/board-tablet-1x.png 1x, img/board-tablet-2x.png 2x" type="image/png">
-            <img srcset="img/board-desktop-1x.png 1x, img/board-desktop-2x.png 2x" class="promo__img-board" width="705" height="515">
+            <img src="img/board-desktop-1x.png" srcset="img/board-desktop-1x.png 1x, img/board-desktop-2x.png 2x" class="promo__img-board" width="705" height="515" alt="Фото пример печатной платы">
           </picture>
           <h1 class="promo__heading">Печатные платы</h1>
           <div class="promo__content-wrapper">
             <p class="promo__descr">производство и монтаж, поставка комплектующих, блоков и модулей</p>
-            <button class="promo__button-consult button button--accent-dark" aria-label="Задайте нам вопрос">
+            <a href="#feedback" class="promo__button-consult button button--accent-dark" aria-label="Задать нам вопрос">
               <span>Получить бесплатную консультацию</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -104,8 +107,8 @@
               которая Вас
               устраивает.</p>
           </li>
-      </ul></div>
-      
+        </ul>
+      </div>
     </section>
     <section class="about">
       <div class="about__wrapper">
@@ -119,7 +122,7 @@
           комплектующие Service Devices применяются на предприятиях Российских Железных Дорог <span class="about__text-wrap"> (РЖД), РоссАвтоПрома (ВАЗ,
             АвтоГАЗ),
             МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
-        <div class="about__button-more button button--accent-light">Подробнее</div>
+        <button class="about__button-more button button--accent-light">Подробнее</button>
       </div>
     </section>
     <section class="services">
@@ -151,32 +154,32 @@
         </ul>
       </div>
     </section>
-    <section class="feedback">
+    <section class="feedback" id="feedback">
       <div class="feedback__wrapper">
         <div class="feedback__content-wrapper">
           <h2 class="feedback__heading">Остались вопросы? Задайте их нам!</h2>
           <p class="feedback__descr">Мы проконсультируем Вас бесплатно</p>
-          <form class="feedback__form" autocomplete="off" action="https://echo.htmlacademy.ru/">
+          <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="feedback__author-info">
               <p>
-                <label class="visually-hidden" for="">Ваше имя</label>
-                <input type="text" placeholder="Имя" required="">
+                <label class="visually-hidden" for="feedback-name">Ваше имя</label>
+                <input type="text" placeholder="Имя" id="feedback-name" name="feedback-name" data-name-input="" required="">
               </p>
               <p>
-                <label class="visually-hidden" for="">Ваш номер телефона</label>
-                <input type="tel" id="customer-phone" placeholder="Телефон" required="">
+                <label class="visually-hidden" for="customer-phone">Ваш номер телефона</label>
+                <input type="tel" id="customer-phone" name="customer-phone" placeholder="Телефон" pattern=".{15,}" data-tel-input="" required="">
               </p>
             </div>
             <div class="feedback__text">
-              <label class="visually-hidden" for="">Ваше вопросы или комментарий</label>
-              <textarea name="" id="" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+              <label class="visually-hidden" for="feedback-comment">Ваше вопросы или комментарий</label>
+              <textarea id="feedback-comment" name="feedback-comment" cols="30" rows="10" placeholder="Ваш вопрос" data-comment-input=""></textarea>
             </div>
             <div class="feedback__box-submit">
               <p>
                 <button class="feedback__button-submit button button--accent-dark" type="submit">Задать вопрос</button>
               </p>
               <p class="feedback__disclaimer">
-                <input type="checkbox" id="form-disclaimer">
+                <input type="checkbox" id="form-disclaimer" required="">
                 <label for="form-disclaimer">Я согласен на обработку персональных данных</label>
               </p>
             </div>
@@ -186,11 +189,14 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer nojs">
     <div class="footer__wrapper">
       <div class="footer__social-wrapper">
         <a href="#" class="footer__logo">
-          <img src="img/icon-logo-dark.png" width="216" height="52" alt="" class="header__logo-img">
+          <picture>
+            <source srcset="img/icon-logo-dark-1x.webp 1x, img/icon-logo-dark-2x.webp 2x" type="image/webp">
+            <img src="img/icon-logo-dark-1x.png" srcset="img/icon-logo-dark-1x.png 1x, img/icon-logo-dark-2x.png 2x" width="216" height="52" alt="Лого компании Smart Device" class="header__logo-img">
+          </picture>
         </a>
         <p class="footer__social-copyright">1999-2018 SD Service Devices</p>
         <ul class="footer__social-list">
@@ -218,9 +224,9 @@
         </ul>
       </div>
       <nav class="footer__nav accordeon">
-        <button class="footer__accordeon-toggle accordeon__toggle" data-accordeon="nav"></button>
+        <button class="footer__accordeon-toggle accordeon__toggle nojs__button-hide" data-accordeon="nav" aria-label="Открыть/Закрыть меню сайта"></button>
         <h3 class="footer__nav-heading">Разделы сайта</h3>
-        <ul class="footer__nav-list accordeon__content" data-accordeon="nav">
+        <ul class="footer__nav-list accordeon__content nojs__content-show" data-accordeon="nav">
           <li class="footer__nav-column">
             <ul class="footer__column-list">
               <li class="footer__column-item">
@@ -253,9 +259,9 @@
         </ul>
       </nav>
       <div class="footer__contacts accordeon">
-        <button class="footer__accordeon-toggle accordeon__toggle" data-accordeon="contacts"></button>
+        <button class="footer__accordeon-toggle accordeon__toggle nojs__button-hide" data-accordeon="contacts" aria-label="Открыть/Закрыть меню контактов"></button>
         <h3 class="footer__contacts-heading">Наш офис</h3>
-        <ul class="footer__contacts-list accordeon__content" data-accordeon="contacts">
+        <ul class="footer__contacts-list accordeon__content nojs__content-show" data-accordeon="contacts">
           <li class="footer__contacts-item footer__contacts-item--address">
             <a href="#">г. Мытищи, Олимпийский проспект, д.10</a>
           </li>
@@ -280,23 +286,23 @@
   </footer>
   <section class="popup-call popup-call--closed">
     <div class="popup-call__wrapper">
-      <button type="button" class="popul-call__button-close" aria-label="Закрыть окно"></button>
+      <button type="button" class="popul-call__button-close" aria-label="Закрыть окно обратной связи"></button>
       <h2 class="popup-call__heading">Закажите звонок</h2>
       <p class="popup-call__descr">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-      <form class="popup-call__form" action="https://echo.htmlacademy.ru/" autocomplete="off">
+      <form class="popup-call__form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off">
         <p class="popup-call___field">
           <label class="visually-hidden" for="popup-name"></label>
           <input id="popup-name" name="popup-name" type="text" placeholder="Имя" required="">
         </p>
         <p class="popup-call___field">
           <label class="visually-hidden" for="popup-phone"></label>
-          <input id="popup-phone" name="popup-phone" type="text" placeholder="Телефон" required="">
+          <input id="popup-phone" name="popup-phone" type="text" placeholder="Телефон" pattern=".{15,}" data-tel-input="" required="">
         </p>
         <p class="popup-call___field">
           <label class="visually-hidden" for="popup-question"></label>
           <textarea id="popup-question" name="popup-question" placeholder="Ваш вопрос"></textarea>
         </p>
-        <button class="popup-call__button-submit button button--accent-dark" type="submit">Отправить</button>
+        <button class="popup-call__button-submit button button--accent-dark" type="submit" aria-label="Отправить вопрос">Отправить</button>
         <p class="popup-call__disclaimer">
           <input type="checkbox" id="popup-disclaimer" required="">
           <label for="popup-disclaimer">Я согласен на обработку персональных данных</label>
@@ -305,7 +311,7 @@
     </div>
   </section>
 
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 
 </html>

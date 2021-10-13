@@ -1,4 +1,9 @@
+.advantages {
+  overflow-y: hidden;
+}
+
 .advantages__wrapper {
+  position: relative;
   width: clamp(900px, 75%, 1170px);
   margin: 0 auto;
   padding-top: 112px;
@@ -15,6 +20,39 @@
     padding-left: 0;
     padding-right: 0;
     width: clamp(290px, 65%, 400px);
+  }
+
+  @include pseudo(before) {
+    left: -190px;
+    top: 63px;
+    width: 260px;
+    height: 224px;
+    background-image: url("../img/icons/triangle.svg");
+    background-size: cover;
+    transform: rotate(-90deg);
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  @include pseudo(after) {
+    left: 419px;
+    bottom: -85px;
+    width: 560px;
+    height: 486px;
+    background-image: url("../img/icons/triangle-pointed.svg");
+    background-size: cover;
+    transform: rotate(-90deg);
+
+    @media (max-width: $breakpoint-tablet) {
+      left: 427px;
+      bottom: -144px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
   }
 }
 
@@ -58,9 +96,11 @@
 }
 
 .advantages__item {
+  z-index: 1;
   padding: 40px 43px 40px 42px;
   border: 1px solid $color-border;
   border-left: 3px solid $color-accent;
+  background-color: $color-white;
   min-height: 299px;
 
   @media (max-width: $breakpoint-tablet) {
@@ -134,7 +174,6 @@
       padding-right: 4px;
     }
   }
-
 }
 
 .advantages__item p {

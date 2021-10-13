@@ -136,6 +136,7 @@
 
   &:hover {
     cursor: pointer;
+    outline: 2px solid $color-white;
   }
 }
 
@@ -261,6 +262,14 @@
 
   &:checked::after {
     opacity: 1;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus + label {
+    outline: 2px solid $color-white;
   }
 }
 

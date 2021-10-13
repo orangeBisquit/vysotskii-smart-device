@@ -1,4 +1,9 @@
+.about {
+  overflow-y: hidden;
+}
+
 .about__wrapper {
+  position: relative;
   width: clamp(900px, 75%, 1170px);
   margin: 0 auto;
   padding: 110px 0;
@@ -17,6 +22,34 @@
   @media (max-width: $breakpoint-mobile) {
     padding: 34px 0 65px;
     width: clamp(290px, 65%, 400px);
+  }
+
+  @include pseudo(before) {
+    left: -595px;
+    top: -104px;
+    width: 560px;
+    height: 486px;
+    background-image: url("../img/icons/triangle-pointed.svg");
+    background-size: cover;
+    transform: rotate(90deg);
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  @include pseudo(after) {
+    right: -309px;
+    top: -293px;
+    width: 260px;
+    height: 224px;
+    background-image: url("../img/icons/triangle.svg");
+    background-size: cover;
+    transform: rotate(-30deg);
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
   }
 }
 
@@ -104,6 +137,7 @@
 .about__button-more {
   min-width: 180px;
   padding: 14px 13px 13px 12px;
+  background-color: $color-white;
 }
 
 .about__text-wrap {

@@ -97,7 +97,7 @@
 
   @media (max-width: $breakpoint-mobile) {
     margin-bottom: 20px;
-    padding-top: 0px;
+    padding-top: 0;
     padding-left: 2px;
   }
 }
@@ -242,7 +242,7 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
-    padding: 28px 0 0px;
+    padding: 28px 0 0;
   }
 }
 

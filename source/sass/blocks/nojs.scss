@@ -1,0 +1,14 @@
+.nojs__button-hide {
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.nojs__content-show {
+  @media (max-width: $breakpoint-mobile) {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+    padding-bottom: 21px;
+  }
+}
