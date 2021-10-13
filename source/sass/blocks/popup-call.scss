@@ -1,0 +1,183 @@
+.popup-call {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: rgba($color-black, 0.5);
+  color: $color-white;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.popup-call__wrapper {
+  padding: 33px 40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 490px;
+  margin: 0 auto;
+  background-color: $color-accent;
+}
+
+.popup-call__heading {
+  margin: 0;
+  margin-bottom: 15px;
+  font-family: $font-roboto;
+  font-size: 28px;
+  line-height: 140.62%;
+}
+
+.popup-call__descr {
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.popup-call___field {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.popup-call input:not([type="checkbox"]),
+.popup-call textarea,
+.popup-call button:not([type="button"]) {
+  width: 100%;
+}
+
+.popup-call input:not([type="checkbox"]),
+.popup-call textarea {
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-white;
+  background-color: rgba($color-white, 0.1);
+  padding: 15px 25px;
+  border: 0;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-white;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid $color-white;
+  }
+
+  &:focus:invalid {
+    outline: 2px solid $color-invalid;
+  }
+
+}
+
+.popup-call textarea {
+  min-height: 104px;
+}
+
+.popul-call__button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17px;
+  height: 17px;
+  padding: 20px;
+  border: 0;
+  background-color: transparent;
+  background-image: url("../img/icons/close-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 17px 17px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:active {
+    outline: 2px solid $color-white;
+    outline-offset: -2px;
+  }
+}
+
+.popup-call__button-submit {
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  transition: all 0.1s ease;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: 2px solid $color-white;
+  }
+
+  &:active {
+    outline: 1px solid $color-white;
+  }
+}
+
+.popup-call__disclaimer {
+  &:hover {
+    outline: 2px solid $color-white;
+  }
+
+  &:active {
+    outline: 1px solid $color-white;
+  }
+}
+
+.popup-call__disclaimer input {
+  position: relative;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  @include pseudo(before) {
+    left: 5px;
+    top: -25px;
+    width: 16px;
+    height: 16px;
+    background-color: $color-accent;
+    border: 1px solid $color-white;
+  }
+
+  @include pseudo(after) {
+    top: -20px;
+    left: 9px;
+    width: 8px;
+    height: 5px;
+    background-image: url("../img/icons/checkbox-arrow.svg");
+    opacity: 0;
+  }
+
+  &:checked::after {
+    opacity: 1;
+  }
+}
+
+.popup-call__disclaimer label {
+  width: 350px;
+  padding: 5px;
+  display: inline-block;
+  padding-left: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.8;
+  text-align: left;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

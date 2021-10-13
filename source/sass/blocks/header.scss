@@ -6,7 +6,28 @@
   @include pseudo(before) {
     width: 100%;
     height: 100%;
-    background-image: url("../img/header-background.png");
+    background-image: url("../img/header-background-desktop-1x.png");
+    background-size: 100%;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/header-background-desktop-2x.png");
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      background-image: url("../img/header-background-tablet-1x.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/header-background-tablet-2x.png");
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      background-image: url("../img/header-background-mobile-1x.png");
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/header-background-mobile-2x.png");
+      }
+    }
   }
 }
 
@@ -14,10 +35,18 @@
   width: clamp(700px, 80%, 1411px);
   margin: 0 auto;
   padding-top: 33px;
+  position: relative;
+  left: -2px;
 
   @media (max-width: $breakpoint-tablet) {
-    width: 720px;
-    padding-top: 24px;
+    width: clamp(720px, 90%, 900px);
+    padding-top: 20px;
+    left: 0;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: clamp(290px, 90%, 500px);
+    padding-top: 16px;
   }
 }
 
@@ -25,61 +54,49 @@
   display: flex;
 }
 
-.header__logo {
-  width: 210px;
+.header__logo,
+.header__logo img {
+  width: 202px;
   height: 52px;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.header__logo {
+  @media (max-width: $breakpoint-mobile) {
+    display: inline-block;
+    margin-left: 1px;
+  }
 }
 
 .header__menu {
   width: 100%;
   padding-left: 40px;
+  padding-top: 4px;
   display: flex;
   justify-content: flex-end;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 0;
+  }
 }
 
 .header__menu-list {
-  margin: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
+  width: clamp(80%, 60%, 100%);
+  margin: 0;
+  margin-right: 49px;
   padding: 0;
   list-style: none;
-  margin-right: 38px;
-  flex-wrap: wrap;
-  width: clamp(80%, 60%, 100%);
-}
 
-.header__menu-item {
-  position: relative;
-
-  &:not(:first-child) {
-    margin-left: 9%;
-  }
-
-  &--email a {
-    @include pseudo(before) {
-      width: 19px;
-      height: 14px;
-      background-image: url("../img/icon-envelope.svg");
-
-      @media (max-width: $breakpoint-tablet) {
-        width: 26px;
-        height: 19px;
-      }
-    }
-  }
-
-  &--phone a {
-    @include pseudo(before) {
-      width: 18px;
-      height: 18px;
-      background-image: url("../img/icon-phone.svg");
-
-      @media (max-width: $breakpoint-tablet) {
-        width: 24px;
-        height: 24px;
-      }
-    }
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0;
   }
 }
 
@@ -87,14 +104,16 @@
   display: block;
   z-index: 2;
   position: relative;
-  padding: 10px;
+  top: -1px;
+  padding: 5px;
   padding-right: 0;
-  padding-left: 39px;
+  padding-left: 35px;
   @include fluid-font(1024px, 1920px, 14px, 16px);
   color: $color-white;
   font-weight: 400;
   line-height: 18px;
   white-space: nowrap;
+  text-decoration: none;
 
   @media (max-width: $breakpoint-tablet) {
     font-size: 0;
@@ -123,13 +142,69 @@
   }
 }
 
+.header__menu-item {
+  position: relative;
+
+  &:not(:first-child) {
+    margin-left: 9.2%;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin: 0;
+    }
+  }
+
+  &--email a {
+    @include pseudo(before) {
+      left: -5px;
+      width: 19px;
+      height: 14px;
+      background-image: url("../img/icons/icon-envelope.svg");
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 26px;
+        height: 19px;
+        left: 0;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        left: 9px;
+      }
+    }
+  }
+
+  &--phone a {
+    @include pseudo(before) {
+      width: 18px;
+      height: 18px;
+      background-image: url("../img/icons/icon-phone.svg");
+
+      @media (max-width: $breakpoint-tablet) {
+        width: 24px;
+        height: 24px;
+        left: 22px;
+      }
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+
+
 .header__button-call {
   position: relative;
   height: min-content;
-  padding: 14px 13px 8px 12px;
   background-color: transparent;
+  white-space: nowrap;
 
   @media (max-width: $breakpoint-tablet) {
     display: none;
+  }
+
+  &:hover {
+    background-color: $color-accent;
+    cursor: pointer;
   }
 }

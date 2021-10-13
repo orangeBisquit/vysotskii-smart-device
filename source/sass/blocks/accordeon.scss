@@ -1,0 +1,54 @@
+.accordeon__toggle {
+  @media (max-width: $breakpoint-mobile) {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+
+    @include pseudo(before) {
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 16px;
+      height: 1px;
+      background-color: $color-grey-toggle;
+    }
+
+    @include pseudo(after) {
+      transition: all 0.2s ease;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) rotate(90deg);
+      width: 16px;
+      height: 1px;
+      background-color: $color-grey-toggle;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--open {
+      &::after {
+        transform: translateY(-50%) translateX(-50%) rotate(0);
+      }
+    }
+  }
+}
+
+.accordeon__content {
+  @media (max-width: $breakpoint-mobile) {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+
+    &--open {
+      opacity: 1;
+      height: auto;
+      visibility: visible;
+      transition: all 1s ease;
+    }
+  }
+}

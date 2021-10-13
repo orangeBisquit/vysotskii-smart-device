@@ -24,7 +24,11 @@
     <div class="header__wrapper">
       <div class="header__menu-wrapper">
         <a href="#" class="header__logo">
-          <img src="img/icon-logo-light.png" width="210" height="52" alt="" class="header__logo-img">
+          <picture>
+            <source media="(max-width: 768px)" srcset="img/logo-small.png" type="image/png">
+            <img src="img/icon-logo-light.png" width="202" height="52" alt="" class="header__logo-img">
+          </picture>
+
         </a>
         <div class="header__menu">
           <ul class="header__menu-list">
@@ -40,10 +44,26 @@
       </div>
       <div class="header__promo promo">
         <div class="promo__content">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/board-mobile-1x.webp 1x, img/board-mobile-2x.webp 2x"
+              type="image/webp">
+            <source media="(max-width: 1023px)" srcset="img/board-tablet-1x.webp 1x, img/board-tablet-2x.webp 2x"
+              type="image/webp">
+            <source srcset="img/board-desktop-1x.webp 1x, img/board-desktop-2x.webp 2x" type="image/webp">
+
+            <source media="(max-width: 767px)" srcset="img/board-mobile-1x.png 1x, img/board-mobile-2x.png 2x"
+              type="image/png">
+            <source media="(max-width: 1023px)" srcset="img/board-tablet-1x.png 1x, img/board-tablet-2x.png 2x"
+              type="image/png">
+            <img srcset="img/board-desktop-1x.png 1x, img/board-desktop-2x.png 2x" class="promo__img-board" width="705"
+              height="515">
+          </picture>
           <h1 class="promo__heading">Печатные платы</h1>
           <div class="promo__content-wrapper">
             <p class="promo__descr">производство и монтаж, поставка комплектующих, блоков и модулей</p>
-            <button class="promo__button-consult button button--accent-dark">Получить бесплатную консультацию</button>
+            <button class="promo__button-consult button button--accent-dark" aria-label="Задайте нам вопрос">
+              <span>Получить бесплатную консультацию</span>
+            </button>
           </div>
         </div>
       </div>
@@ -62,7 +82,7 @@
               заказы плат и
               комплектующих в самые короткие сроки</p>
           </li>
-          <li class="advantages__item">
+          <li class="advantages__item advantages__item--hired">
             <svg class="advantages__icon advantages__icon--hired" width="35" height="35">
               <use xlink:href="img/sprite/sprite_auto.svg#icon-hired"></use>
             </svg>
@@ -72,20 +92,21 @@
               такими компаниями обеспичивает хорошее качество нашей продукции.
             </p>
           </li>
-          <li class="advantages__item">
+          <li class="advantages__item advantages__item--detective advantages__item--small">
             <svg class="advantages__icon advantages__icon--detective" width="36" height="31">
               <use xlink:href="img/sprite/sprite_auto.svg#icon-detective"></use>
             </svg>
             <h3>Полная конфиденциальность</h3>
-            <p>По желанию клиента мы обеспечиваем полную конфеденциальность.
+            <p>По желанию клиента <span>мы обеспечиваем полную</span> конфеденциальность.
             </p>
           </li>
-          <li class="advantages__item">
+          <li class="advantages__item advantages__item--tag advantages__item--small">
             <svg class="advantages__icon advantages__icon--tag" width="35" height="35">
               <use xlink:href="img/sprite/sprite_auto.svg#icon-tag"></use>
             </svg>
             <h3>Персонализация стоимости</h3>
-            <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
+            <p>Мы <span>подбираем определенную фабрику, поставщиков,</span> вид доставки, чтобы установить ту цену,
+              которая Вас
               устраивает.</p>
           </li>
       </div>
@@ -100,9 +121,10 @@
         </p>
         <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE,
           HOLGLITRONIC, REFOND. Печатные платы и
-          комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ,
-          АвтоГАЗ),
-          МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+          комплектующие Service Devices применяются на предприятиях Российских Железных Дорог <span
+            class="about__text-wrap"> (РЖД), РоссАвтоПрома (ВАЗ,
+            АвтоГАЗ),
+            МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
         <div class="about__button-more button button--accent-light">Подробнее</div>
       </div>
     </section>
@@ -140,7 +162,7 @@
         <div class="feedback__content-wrapper">
           <h2 class="feedback__heading">Остались вопросы? Задайте их нам!</h2>
           <p class="feedback__descr">Мы проконсультируем Вас бесплатно</p>
-          <form class="feedback__form" autocomplete="off">
+          <form class="feedback__form" autocomplete="off" action="https://echo.htmlacademy.ru/">
             <div class="feedback__author-info">
               <p>
                 <label class="visually-hidden" for="">Ваше имя</label>
@@ -174,7 +196,7 @@
     <div class="footer__wrapper">
       <div class="footer__social-wrapper">
         <a href="#" class="footer__logo">
-          <img src="img/icon-logo-dark.png" width="210" height="52" alt="" class="header__logo-img">
+          <img src="img/icon-logo-dark.png" width="216" height="52" alt="" class="header__logo-img">
         </a>
         <p class="footer__social-copyright">1999-2018 SD Service Devices</p>
         <ul class="footer__social-list">
@@ -201,36 +223,46 @@
           </li>
         </ul>
       </div>
-      <nav class="footer__nav">
+      <nav class="footer__nav accordeon">
+        <button class="footer__accordeon-toggle accordeon__toggle" data-accordeon="nav"></button>
         <h3 class="footer__nav-heading">Разделы сайта</h3>
-        <ul class="footer__nav-list">
-          <li class="footer__nav-item">
-            <a href="#">О компании</a>
+        <ul class="footer__nav-list accordeon__content" data-accordeon="nav">
+          <li class="footer__nav-column">
+            <ul class="footer__column-list">
+              <li class="footer__column-item">
+                <a href="#">О компании</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#">Продукты</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#">Производство печатных плат</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#">Монтаж печатных плат</a>
+              </li>
+            </ul>
           </li>
-          <li class="footer__nav-item">
-            <a href="#">Комплектующие</a>
-          </li>
-          <li class="footer__nav-item">
-            <a href="#">Продукты</a>
-          </li>
-          <li class="footer__nav-item">
-            <a href="#">Доставка</a>
-          </li>
-          <li class="footer__nav-item">
-            <a href="#">Производство печатных плат</a>
-          </li>
-          <li class="footer__nav-item">
-            <a href="#">Контакты</a>
-          </li>
-          <li class="footer__nav-item">
-            <a href="#">Монтаж печатных плат</a>
+          <li class="footer__nav-column">
+            <ul class="footer__column-list">
+              <li class="footer__column-item">
+                <a href="#">Комплектующие</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#">Доставка</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
-      <div class="footer__contacts">
+      <div class="footer__contacts accordeon">
+        <button class="footer__accordeon-toggle accordeon__toggle" data-accordeon="contacts"></button>
         <h3 class="footer__contacts-heading">Наш офис</h3>
-        <ul class="footer__contacts-list">
-          <li class="footer__contacts-item">
+        <ul class="footer__contacts-list accordeon__content" data-accordeon="contacts">
+          <li class="footer__contacts-item footer__contacts-item--address">
             <a href="#">г. Мытищи, Олимпийский проспект, д.10</a>
           </li>
           <li class="footer__contacts-item">
@@ -252,6 +284,32 @@
       </div>
     </div>
   </footer>
+  <section class="popup-call popup-call--closed">
+    <div class="popup-call__wrapper">
+      <button type="button" class="popul-call__button-close" aria-label="Закрыть окно"></button>
+      <h2 class="popup-call__heading">Закажите звонок</h2>
+      <p class="popup-call__descr">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+      <form class="popup-call__form" action="https://echo.htmlacademy.ru/" autocomplete="off">
+        <p class="popup-call___field">
+          <label class="visually-hidden" for="popup-name"></label>
+          <input id="popup-name" name="popup-name" type="text" placeholder="Имя" required>
+        </p>
+        <p class="popup-call___field">
+          <label class="visually-hidden" for="popup-phone"></label>
+          <input id="popup-phone" name="popup-phone" type="text" placeholder="Телефон" required>
+        </p>
+        <p class="popup-call___field">
+          <label class="visually-hidden" for="popup-question"></label>
+          <textarea id="popup-question" name="popup-question" placeholder="Ваш вопрос"></textarea>
+        </p>
+        <button class="popup-call__button-submit button button--accent-dark" type="submit">Отправить</button>
+        <p class="popup-call__disclaimer">
+          <input type="checkbox" id="popup-disclaimer" required>
+          <label for="popup-disclaimer">Я согласен на обработку персональных данных</label>
+        </p>
+      </form>
+    </div>
+  </section>
 
   <script src="js/index.js"></script>
 </body>

@@ -1,10 +1,11 @@
 .footer {
-  padding: 65px 0 14px;
+  padding: 72px 0 14px;
   color: $color-background-dark;
+  background-color: $color-background-light;
   overflow-x: hidden;
 
-  @media (max-width: $breakpoint-mobile) {
-    padding: 19px 0 24px;
+  @media (max-width: $breakpoint-tablet) {
+    padding: 18px 0 24px;
   }
 
   @media (max-width: $breakpoint-mobile) {
@@ -22,11 +23,13 @@
   margin: 0 auto;
 
   @media (max-width: $breakpoint-tablet) {
+    padding-left: 5px;
     grid-template-columns: 1fr 1fr;
-    width: calc((770 - 20 * 2) / 770 * 100%);
+    width: clamp(721px, 95%, 950px);
   }
 
   @media (max-width: $breakpoint-mobile) {
+    padding-left: 0;
     width: clamp(290px, 65%, 350px);
     display: block;
   }
@@ -34,7 +37,14 @@
 
 .footer__logo {
   display: inline-block;
-  margin-bottom: 53px;
+  margin-bottom: 50px;
+  width: 216px;
+  height: 52px;
+  margin-left: 2px;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: 27px;
+  }
 
   @media (max-width: $breakpoint-mobile) {
     margin-bottom: 26px;
@@ -65,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 56px;
+    padding-bottom: 47px;
   }
 }
 
@@ -80,25 +90,41 @@
   opacity: 0.5;
 
   @media (max-width: $breakpoint-tablet) {
+    padding-top: 17px;
+    padding-left: 21px;
     display: block;
   }
 
   @media (max-width: $breakpoint-mobile) {
-    margin-bottom: 31px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+    padding-left: 2px;
   }
 }
 
 .footer__social-list {
+  position: relative;
+  left: -2px;
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (max-width: $breakpoint-tablet) {
+    left: 7px;
+    padding-top: 9px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    left: 5px;
+    padding-top: 8px;
+  }
 }
 
 .footer__social-link {
-  margin-right: 10px;
+  margin-right: 8px;
   display: inline-block;
-  padding: 6px;
+  padding: 4px;
 
   &:hover svg {
     transform: scale(1.07);
@@ -120,14 +146,16 @@
 
 .footer__nav {
   padding-bottom: 55px;
+  padding-left: 10%;
+  padding-right: 8%;
 
   @media (max-width: $breakpoint-tablet) {
-    padding: 38px 0 33px;
+    padding: 38px 0 37px;
   }
 
   @media (max-width: $breakpoint-mobile) {
     position: relative;
-    padding: 28px 0 23px;
+    padding: 28px 0 4px;
 
     @include pseudo(before) {
       opacity: 0.5;
@@ -143,7 +171,7 @@
 
 .footer__nav-heading {
   margin: 0;
-  margin-bottom: 29px;
+  margin-bottom: 25px;
   color: $color-background-dark;
   font-weight: 400;
   font-size: 15px;
@@ -151,6 +179,10 @@
   font-family: $font-roboto;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+
+  @media (max-width: $breakpoint-mobile) {
+    position: relative;
+  }
 }
 
 .footer__nav-list {
@@ -160,16 +192,25 @@
   padding: 0;
   margin: 0;
   list-style: none;
+  transition: all 0.3s ease;
 
   @media (max-width: $breakpoint-tablet) {
     display: block;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-bottom: 19px;
+  }
 }
 
-.footer__nav-item a {
+.footer__column-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__column-item a {
   display: inline-block;
-  margin-bottom: 3px;
-  padding: 3px;
   font-size: 15px;
   line-height: 25px;
   text-decoration: none;
@@ -191,32 +232,44 @@
 
 // Контакты
 .footer__contacts {
+  position: relative;
   padding-bottom: 55px;
+  padding-left: 17px;
 
   @media (max-width: $breakpoint-tablet) {
     padding: 38px 0 33px;
+    padding-left: 15px;
   }
 
   @media (max-width: $breakpoint-mobile) {
-    padding: 28px 0 23px;
+    padding: 28px 0 0px;
   }
 }
 
 .footer__contacts-heading {
   margin: 0;
-  margin-bottom: 29px;
+  margin-bottom: 27px;
   font-family: $font-roboto;
   font-weight: 400;
   font-size: 15px;
   line-height: 16px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-bottom: 33px;
+  }
 }
 
 .footer__contacts-list {
   padding: 0;
   margin: 0;
   list-style: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-right: 10px;
+    padding-bottom: 19px;
+  }
 }
 
 .footer__contacts-item a {
@@ -225,6 +278,17 @@
   line-height: 25px;
   text-decoration: none;
   opacity: 0.5;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.footer__contacts-item--address a {
+  &:hover {
+    cursor: default;
+    color: inherit;
+  }
 }
 
 // Копирайт
@@ -238,6 +302,7 @@
   z-index: 2;
 
   @media (max-width: $breakpoint-tablet) {
+    padding-top: 21px;
     grid-column-end: 3;
   }
 
@@ -284,6 +349,7 @@
   }
 
   &--developed {
+    padding-right: 4px;
     margin-left: auto;
   }
 
@@ -293,5 +359,17 @@
     &:not(:last-child) {
       margin-bottom: 21px;
     }
+  }
+}
+
+.footer__accordeon-toggle {
+  display: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: -5px;
+    top: 23px;
   }
 }

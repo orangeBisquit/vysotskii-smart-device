@@ -1,8 +1,19 @@
 .promo {
   display: flex;
   position: relative;
-  padding-top: 160px;
-  padding-bottom: 278px;
+  padding-top: 230px;
+  padding-bottom: 275px;
+  left: -3px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 116px;
+    padding-bottom: 163px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-top: 233px;
+    padding-bottom: 71px;
+  }
 }
 
 .promo__content {
@@ -12,38 +23,69 @@
 
   @media (max-width: $breakpoint-tablet) {
     min-width: 0;
-    width: 427px;
+    width: clamp(460px, 80%, 900px);
+    padding-left: 66px;
   }
 
   @media (max-width: $breakpoint-mobile) {
-    width: 290px;
+    margin: 0 auto;
+    width: clamp(290px, 90%, 500px);
+    padding-left: 3px;
   }
 
   @include pseudo(before) {
     z-index: 1;
-    top: -100px;
-    right: -692px;
-    width: 562px;
+    top: -43px;
+    right: -694px;
+    width: 611px;
     height: 487px;
-    background-image: url("../img/promo_triangles.svg");
+    background-image: url("../img/icons/promo_triangles.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      top: -107px;
+      right: auto;
+      left: 425px;
+      width: 500px;
+      height: 384px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      top: -217px;
+      left: 136px;
+      width: 500px;
+      height: 367px;
+    }
+  }
+}
+
+.promo__img-board {
+  position: absolute;
+  width: 705px;
+  height: 515px;
+  top: -57px;
+  right: -775px;
+
+  @media (max-width: $breakpoint-tablet) {
+    top: -75px;
+    right: -377px;
+    width: 465px;
+    height: 340px;
   }
 
-  @include pseudo(after) {
-    top: 0;
-    right: -850px;
-    z-index: 2;
-    width: 705px;
-    height: 515px;
-    background-image: url("../img/board-desktop-1x.png");
+  @media (max-width: $breakpoint-mobile) {
+    width: 294px;
+    height: 220px;
+    right: -18px;
+    top: -194px;
   }
 }
 
 .promo__heading {
   margin: 0;
-  margin-bottom: 31px;
+  margin-bottom: 27px;
   color: $color-white;
   font-weight: 700;
   font-size: 80px;
@@ -53,7 +95,17 @@
   letter-spacing: 0.07em;
 
   @media (max-width: $breakpoint-tablet) {
+    position: relative;
+    z-index: 7;
     font-size: 60px;
+    line-height: 70px;
+    margin-bottom: 29px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 40px;
+    line-height: 47px;
+    margin-bottom: 26px;
   }
 }
 
@@ -63,39 +115,90 @@
   @media (max-width: $breakpoint-tablet) {
     padding-left: 51px;
   }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0;
+  }
 }
 
 .promo__descr {
   position: relative;
   margin: 0;
-  margin-bottom: 37px;
+  margin-bottom: 44px;
   color: $color-white;
   font-weight: 400;
   font-size: 22px;
   line-height: 34px;
 
   @media (max-width: $breakpoint-tablet) {
+    position: relative;
+    z-index: 7;
     font-size: 18px;
     line-height: 156.8%;
+    margin-bottom: 55px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding-left: 51px;
+    margin-bottom: 40px;
+    line-height: 160%;
+    font-size: 16px;
   }
 
   @include pseudo(before) {
-    top: 15px;
-    /* promo__content-wrapper outset */
-    left: -98px;
+    top: 17px;
+    left: -95px;
     width: 66px;
     height: 2px;
     background-color: $color-white;
 
     @media (max-width: $breakpoint-tablet) {
+      top: 16px;
       width: 33px;
-      left: -51px;
+      left: -48px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      top: 15px;
+      left: 3px;
     }
   }
 }
 
 .promo__button-consult {
-  padding: 17px 28px 14px;
+  position: relative;
+  left: -1px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  padding: 18px 28px;
+  min-width: 407px;
+  border: 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    min-width: 380px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin-left: 4px;
+    position: relative;
+    padding: 8px 10px;
+    min-width: 290px;
+    min-height: 55px;
+
+    span {
+      visibility: hidden;
+    }
+
+    @include pseudo(before) {
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      content: "Бесплатная консультация";
+    }
+  }
 }
 
 .promo__img-wrapper {
@@ -103,9 +206,6 @@
   right: -50px;
   z-index: 2;
   position: relative;
-
-
-
 }
 
 .promo__img {
