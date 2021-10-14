@@ -121,15 +121,17 @@
     @media (max-width: $breakpoint-mobile) {
       margin-bottom: 29px;
     }
+  }
+}
+
+.about__dots {
+  @media (max-width: $breakpoint-tablet) {
+    position: relative;
 
     @include pseudo(before) {
       content: "..";
-      bottom: 0;
-      right: 9px;
-
-      @media (max-width: $breakpoint-tablet) {
-        right: 135px;
-      }
+      bottom: -2px;
+      right: -20px;
     }
   }
 }

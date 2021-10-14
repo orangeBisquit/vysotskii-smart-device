@@ -128,16 +128,6 @@
   }
 }
 
-.popup-call__disclaimer {
-  &:hover {
-    outline: 2px solid $color-white;
-  }
-
-  &:active {
-    outline: 1px solid $color-white;
-  }
-}
-
 .popup-call__disclaimer input {
   position: relative;
   font-size: 1px;
@@ -190,5 +180,7 @@
 
   &:hover {
     cursor: pointer;
+    outline: 2px solid $color-white;
+    outline-offset: 12px;
   }
 }
