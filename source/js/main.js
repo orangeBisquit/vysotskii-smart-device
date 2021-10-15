@@ -1,10 +1,3 @@
-// import './phone-mask.js';
-// import './popup.js';
-// import './accordeon.js';
-// import './phone-input.js';
-// import './local-storage.js';
-// import './nojs.js';
-
 // Отключение nojs
 const nojsButtons = document.querySelectorAll('.nojs__button-hide');
 const nojsContent = document.querySelectorAll('.nojs__content-show');
