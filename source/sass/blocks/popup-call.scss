@@ -68,7 +68,7 @@
     font-family: $font-pt-mono;
     font-size: 16px;
     line-height: 22px;
-    color: $color-white;
+    color: rgba($color-white, 0.8);
   }
 
   &:hover,

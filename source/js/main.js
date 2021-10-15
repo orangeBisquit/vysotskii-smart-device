@@ -89,18 +89,29 @@ document.addEventListener('DOMContentLoaded', () => {
 const pupupCloseButton = document.querySelector('.popup-call__button-close');
 const popupOpenButton = document.querySelector('.header__button-call');
 const popupOverlay = document.querySelector('.popup-call');
+const pageBody = document.querySelector('body');
 
 const popupCloseClass = 'popup-call--closed';
 
 if (popupOverlay && pupupCloseButton) {
+  const disableScroll = () => {
+    pageBody.classList.add('no-scroll');
+  };
+
+  const enableScroll = () => {
+    pageBody.classList.remove('no-scroll');
+  };
+
   const closePopup = () => {
     popupOverlay.classList.add(popupCloseClass);
+    enableScroll();
   };
 
   const openPopup = () => {
     popupOverlay.classList.remove(popupCloseClass);
     const popupNameField = document.querySelector('#popup-name');
     popupNameField.focus();
+    disableScroll();
 
     pupupCloseButton.addEventListener('click', () => {
       closePopup();

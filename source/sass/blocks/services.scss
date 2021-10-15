@@ -65,7 +65,7 @@
   z-index: 2;
   position: relative;
   background-color: $color-background-dark;
-  transition: all 0.1 s ease;
+  transition: all 0.1s ease;
 
   @media (max-width: $breakpoint-tablet) {
     margin-bottom: 46px;
@@ -84,6 +84,7 @@
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: $color-accent;
   }
 
   &--manufactoring {
