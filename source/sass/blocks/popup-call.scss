@@ -87,7 +87,7 @@
   min-height: 104px;
 }
 
-.popul-call__button-close {
+.popup-call__button-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -171,6 +171,7 @@
   width: 350px;
   padding: 5px;
   display: inline-block;
+  vertical-align: middle;
   padding-left: 40px;
   font-weight: 400;
   font-size: 14px;

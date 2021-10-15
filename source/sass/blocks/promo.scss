@@ -183,22 +183,30 @@
   }
 
   @media (max-width: $breakpoint-mobile) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 4px;
     position: relative;
     padding: 8px 10px;
     min-width: 290px;
     min-height: 55px;
+  }
+}
 
-    span {
-      visibility: hidden;
+.promo__button-text {
+  &--big {
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
     }
+  }
 
-    @include pseudo(before) {
-      width: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      content: "Бесплатная консультация";
+  &--small {
+    display: none;
+
+    @media (max-width: $breakpoint-mobile) {
+      display: inline;
+      vertical-align: middle;
     }
   }
 }

@@ -67,6 +67,7 @@
 .header__logo {
   @media (max-width: $breakpoint-mobile) {
     display: inline-block;
+    vertical-align: middle;
     margin-left: 1px;
   }
 }
