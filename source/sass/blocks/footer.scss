@@ -107,6 +107,7 @@
   position: relative;
   left: -2px;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -127,6 +128,7 @@
   display: inline-block;
   vertical-align: middle;
   padding: 4px;
+  transition: all 1s ease;
 
   &:hover svg {
     transform: scale(1.07);

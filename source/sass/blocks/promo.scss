@@ -69,6 +69,10 @@
   top: -57px;
   right: -775px;
 
+  @media (max-width: 1300px) {
+    right: -660px;
+  }
+
   @media (max-width: $breakpoint-tablet) {
     top: -75px;
     right: -377px;

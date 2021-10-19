@@ -92,6 +92,34 @@ const popupOverlay = document.querySelector('.popup-call');
 const pageBody = document.querySelector('body');
 
 const popupCloseClass = 'popup-call--closed';
+const popupForm = document.querySelector('.popup-call');
+const focusableElements = popupForm.querySelectorAll(('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+
+const firstFocusableElement = focusableElements[0];
+const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+const disableTabUp = (evt) => {
+  if (evt.shiftKey && evt.keyCode === 9) {
+    if (document.activeElement === firstFocusableElement) {
+      firstFocusableElement.focus();
+      evt.preventDefault();
+    }
+  }
+};
+
+const disableTabDown = (evt) => {
+  if (evt.keyCode === 9 && !evt.shiftKey) {
+    if (document.activeElement === lastFocusableElement) {
+      lastFocusableElement.focus();
+      evt.preventDefault();
+    }
+  }
+};
+
+const popupTabHandler = (evt) => {
+  disableTabUp(evt);
+  disableTabDown(evt);
+}
 
 if (popupOverlay && pupupCloseButton) {
   const disableScroll = () => {
@@ -128,6 +156,8 @@ if (popupOverlay && pupupCloseButton) {
         closePopup();
       }
     });
+
+    popupForm.addEventListener('keydown', popupTabHandler);
   };
 
   popupOpenButton.addEventListener('click', () => {

@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: calc(30 / 1170 * 100%);
+  row-gap: 30px;
 
   @media (max-width: $breakpoint-tablet) {
     display: block;

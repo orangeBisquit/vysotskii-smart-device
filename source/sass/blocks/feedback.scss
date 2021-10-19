@@ -175,6 +175,7 @@
 
 .feedback__text textarea {
   height: 154px;
+  resize: none;
 
   @media (max-width: $breakpoint-tablet) {
     height: 160px;

@@ -100,7 +100,7 @@
   }
 }
 
-.header__menu-list a {
+.header__menu-item a {
   display: block;
   z-index: 2;
   position: relative;
@@ -155,8 +155,9 @@
   }
 
   &--email a {
+    padding-left: 40px;
     @include pseudo(before) {
-      left: -5px;
+      left: 0;
       width: 19px;
       height: 14px;
       background-image: url("../img/icons/icon-envelope.svg");
