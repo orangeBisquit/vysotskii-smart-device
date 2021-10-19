@@ -139,7 +139,7 @@
 
   @include pseudo(before) {
     left: 0;
-    top: -25px;
+    top: -19px;
     width: 16px;
     height: 16px;
     background-color: $color-accent;
@@ -147,7 +147,7 @@
   }
 
   @include pseudo(after) {
-    top: -20px;
+    top: -14px;
     left: 4px;
     width: 8px;
     height: 5px;

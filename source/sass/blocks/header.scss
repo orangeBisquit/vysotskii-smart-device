@@ -156,6 +156,7 @@
 
   &--email a {
     padding-left: 40px;
+
     @include pseudo(before) {
       left: 0;
       width: 19px;
@@ -165,7 +166,7 @@
       @media (max-width: $breakpoint-tablet) {
         width: 26px;
         height: 19px;
-        left: 0;
+        left: 4px;
       }
 
       @media (max-width: $breakpoint-mobile) {
