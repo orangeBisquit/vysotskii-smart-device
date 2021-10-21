@@ -1,14 +1,14 @@
 .accordeon__toggle {
   @media (max-width: $breakpoint-mobile) {
     width: 100%;
-    height: 60px;
+    height: 100%;
     padding: 0;
     border: 0;
     background-color: transparent;
 
     @include pseudo(before) {
-      top: 50%;
-      right: 0;
+      top: 37px;
+      right: 8px;
       transform: translateY(-50%) translateX(-50%);
       width: 16px;
       height: 1px;
@@ -17,8 +17,8 @@
 
     @include pseudo(after) {
       transition: all 0.2s ease;
-      top: 50%;
-      right: 0;
+      top: 37px;
+      right: 8px;
       transform: translateY(-50%) translateX(-50%) rotate(90deg);
       width: 16px;
       height: 1px;
@@ -39,6 +39,9 @@
 
 .accordeon__content {
   @media (max-width: $breakpoint-mobile) {
+    width: clamp(290px, 60%, 350px);
+    margin-right: auto;
+    margin-left: auto;
     opacity: 0;
     height: 0;
     visibility: hidden;
@@ -52,5 +55,13 @@
       transition: all 1s ease;
       padding-bottom: 25px;
     }
+  }
+}
+
+.accordeon__heading {
+  @media (max-width: $breakpoint-mobile) {
+    width: clamp(290px, 60%, 350px);
+    margin-right: auto;
+    margin-left: auto;
   }
 }

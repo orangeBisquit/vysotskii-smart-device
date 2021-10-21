@@ -30,7 +30,7 @@
 
   @media (max-width: $breakpoint-mobile) {
     padding-left: 0;
-    width: clamp(290px, 65%, 350px);
+    width: 100%;
     display: block;
   }
 }
@@ -390,7 +390,15 @@
     display: block;
     position: absolute;
     z-index: 10;
-    right: -5px;
-    top:7px;
+    left: 0;
+    top: 0;
+  }
+}
+
+.accordeon__heading {
+  @media (max-width: $breakpoint-mobile) {
+    width: clamp(290px, 60%, 350px);
+    margin-right: auto;
+    margin-left: auto;
   }
 }

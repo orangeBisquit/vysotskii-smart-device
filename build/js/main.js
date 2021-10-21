@@ -101,8 +101,8 @@ const lastFocusableElement = focusableElements[focusableElements.length - 1];
 const disableTabUp = (evt) => {
   if (evt.shiftKey && evt.keyCode === 9) {
     if (document.activeElement === firstFocusableElement) {
-      firstFocusableElement.focus();
       evt.preventDefault();
+      lastFocusableElement.focus();
     }
   }
 };
@@ -110,8 +110,8 @@ const disableTabUp = (evt) => {
 const disableTabDown = (evt) => {
   if (evt.keyCode === 9 && !evt.shiftKey) {
     if (document.activeElement === lastFocusableElement) {
-      lastFocusableElement.focus();
       evt.preventDefault();
+      firstFocusableElement.focus();
     }
   }
 };
@@ -119,7 +119,7 @@ const disableTabDown = (evt) => {
 const popupTabHandler = (evt) => {
   disableTabUp(evt);
   disableTabDown(evt);
-}
+};
 
 if (popupOverlay && pupupCloseButton) {
   const disableScroll = () => {
